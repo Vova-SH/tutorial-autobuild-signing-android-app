@@ -61,11 +61,11 @@ jobs:
         
         # Собираем APK файл с подписью 
       - name: Build Release apk
-        run: ./gradlew assembleRelease -Pandroid.injected.signing.store.file=~/$STORE_NAME -Pandroid.injected.signing.store.password=$SIGNING_STORE_PASSWORD -Pandroid.injected.signing.key.alias=$SIGNING_KEY_ALIAS -Pandroid.injected.signing.key.password=$SIGNING_KEY_PASSWORD
+        run: ./gradlew assembleRelease -Pandroid.injected.signing.store.file=/$STORE_NAME -Pandroid.injected.signing.store.password=$SIGNING_STORE_PASSWORD -Pandroid.injected.signing.key.alias=$SIGNING_KEY_ALIAS -Pandroid.injected.signing.key.password=$SIGNING_KEY_PASSWORD
         
         # Собираем AAB файл с подписью 
       - name: Build Release bundle
-        run: ./gradlew bundleRelease -Pandroid.injected.signing.store.file=~/$STORE_NAME -Pandroid.injected.signing.store.password=$SIGNING_STORE_PASSWORD -Pandroid.injected.signing.key.alias=$SIGNING_KEY_ALIAS -Pandroid.injected.signing.key.password=$SIGNING_KEY_PASSWORD
+        run: ./gradlew bundleRelease -Pandroid.injected.signing.store.file=/$STORE_NAME -Pandroid.injected.signing.store.password=$SIGNING_STORE_PASSWORD -Pandroid.injected.signing.key.alias=$SIGNING_KEY_ALIAS -Pandroid.injected.signing.key.password=$SIGNING_KEY_PASSWORD
 
         # Загружаем наши файлики в артефакты
       - name: Upload Release Build to Artifacts
